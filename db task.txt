@@ -1,0 +1,78 @@
+
+use[sample2]
+go
+
+
+--select * from [dbo].[CUSTOMER] order by custfname;
+-- select * from [dbo].[CUSTOMER] where cust_id = 2 ;
+--insert into  [dbo].[CUSTOMER]  values (1,'adel','shakel','room','alex','single','street2')
+-- update [dbo].[CUSTOMER] set custfname = 'maher' where cust_id = 5
+--delete from [dbo].[CUSTOMER] where cust_id = 5
+-- delete  from [dbo].[CUSTOMER]
+
+/*
+create proc AddCustomer
+@cust_id int,
+@custfname varchar(255),@custlname varchar(255)
+,@reservation varchar(255),@address varchar (255)
+,@status varchar(255),@contac_address varchar (255)
+as
+begin
+insert into [dbo].[CUSTOMER] 
+values(@cust_id,@custfname,@custlname,@reservation,@address,@status,@contac_address);
+end
+*/
+
+/*
+create proc SelectAllCustomers
+as
+begin
+select * from [dbo].[CUSTOMER] order by custfname;
+end
+*/
+
+/*
+create proc SelectSpecificCustomers
+@id int
+as
+begin
+select * from [dbo].[CUSTOMER] where cust_id = @id 
+end
+*/
+
+/*
+create proc ChangeCustomersName
+@id int,@fname varchar(255)
+as
+begin
+update [dbo].[CUSTOMER]  set custfname =@fname where cust_id =@id
+end
+*/
+/*
+create proc DeleteSpecificCustomers
+@id int
+as
+begin
+delete from [dbo].[CUSTOMER] where cust_id =@id  
+end
+*/
+/*
+create proc DeleteAllCustomers
+as
+begin
+delete from [dbo].[CUSTOMER] 
+end
+*/
+
+/*
+execute DeleteAllCustomers
+exec AddCustomer 1, 'tamer','mahmoud','room','kafr','single','quleen'
+exec AddCustomer 2, 'Azza','youssef','room','kafr','single','quleen'
+exec AddCustomer 3, 'mohamed','sami','room','kafr','single','quleen'
+exec AddCustomer 4, 'yara','mahmoud','room','kafr','single','quleen'
+exec AddCustomer 5, 'adel','shakel','room','kafr','double','alex'
+--exec SelectSpecificCustomers 2
+--exec DeleteSpecificCustomers @id =5
+--exec ChangeCustomersName @fname ='maher',@id= 1
+--exec SelectAllCustomers
+*/
